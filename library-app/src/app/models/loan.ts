@@ -5,4 +5,6 @@ export class Loan {
   loan_date?: Date;
   loan_days: number = 0;
   status: string = "";
+  updated_at?: Date;
+  created_at?: Date;
 }

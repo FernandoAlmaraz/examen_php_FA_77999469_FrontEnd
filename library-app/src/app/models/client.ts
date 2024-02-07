@@ -4,4 +4,6 @@ export class Client {
   email: string = "";
   cellphone: string = "";
   id_card: string = "";
+  updated_at?: Date;
+  created_at?: Date;
 }
