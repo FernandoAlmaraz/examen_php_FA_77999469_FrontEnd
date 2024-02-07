@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="container text-center" style="margin: 30px;">
+    <h3>Sistema de Biblioteca</h3>
+  </div>
+
+  <table class="table table-striped table-hover align-middle">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Libro</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Fecha de Inicio de prestamo</th>
+        <th scope="col">Timpo de prestamo en días</th>
+        <th scope="col">Estado del prestamo</th>
+        <th scope="col">Fecha de creación</th>
+        <th scope="col">Fecha de Actualización</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let loan of loans">
+        <th scope="row">{{loan.id}}</th>
+        <td>{{loan.book_id}}</td>
+        <td>{{loan.client_id}}</td>
+        <td>{{loan.loan_date}}</td>
+        <td>{{loan.loan_days}}</td>
+        <td>{{loan.status}}</td>
+        <td>{{loan.created_at}}</td>
+        <td>{{loan.updated_at}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
