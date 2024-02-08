@@ -11,6 +11,7 @@ import { LoanListComponent } from './loanComponents/loan-list/loan-list.componen
 import { AutorAddComponent } from './autorComponents/autor-add/autor-add.component';
 import { FormsModule } from '@angular/forms';
 import { BookAddComponent } from './bookComponents/book-add/book-add.component';
+import { CliendAddComponent } from './clientComponents/cliend-add/cliend-add.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { BookAddComponent } from './bookComponents/book-add/book-add.component';
     BookListComponent,
     LoanListComponent,
     AutorAddComponent,
-    BookAddComponent
+    BookAddComponent,
+    CliendAddComponent
   ],
   imports: [
     BrowserModule,

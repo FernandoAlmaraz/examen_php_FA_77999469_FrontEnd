@@ -23,5 +23,8 @@ export class ClientService {
         })))
       );
   }
+  addClient(client: Client): Observable<Client> {
+    return this.clientHttp.post<Client>(this.urlBase, client);
+  }
 }
 
