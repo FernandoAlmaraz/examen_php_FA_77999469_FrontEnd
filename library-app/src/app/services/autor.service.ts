@@ -27,14 +27,17 @@ export class AutorService {
   }
 
   obtainAutorById(id: number): Observable<Autor> {
-    return this.clientHttp.get<any>(`${this.urlBase}/${id}`).pipe(map
-      (response => response.data.map((autor: Autor) => ({
-        id: autor.id,
-        name: autor.name,
-        updated_at: autor.updated_at,
-        created_at: autor.created_at
-      })))
+    return this.clientHttp.get<any>(`${this.urlBase}/${id}`).pipe(
+      map(response => ({
+        id: response.data.id,
+        name: response.data.name,
+        updated_at: response.data.updated_at,
+        created_at: response.data.created_at
+      }))
     );
+  }
+  editAutor(id: number, autor: Autor): Observable<object> {
+    return this.clientHttp.put<any>(`${this.urlBase}/${id}`, autor);
   }
 
   deleteAutor(id: number): Observable<Object> {

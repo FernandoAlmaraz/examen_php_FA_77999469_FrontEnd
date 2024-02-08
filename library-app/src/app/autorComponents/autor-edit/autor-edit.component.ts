@@ -25,7 +25,16 @@ export class AutorEditComponent {
     console.log(this.autor)
   }
   onSubmit() {
-
+    this.safeAutor();
+  }
+  safeAutor() {
+    this.autorService.editAutor(this.id, this.autor).subscribe({
+      next: (data) => this.goToListAutors(),
+      error: (error: any) => console.log(error)
+    });
+  }
+  goToListAutors() {
+    this.router.navigate(['/autors']);
   }
 
 }
