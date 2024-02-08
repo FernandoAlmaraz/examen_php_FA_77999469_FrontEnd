@@ -10,14 +10,6 @@ export class AutorService {
   private urlBase = "http://localhost:8000/api/v1/autors"
   constructor(private clientHttp: HttpClient) { }
 
-  // dateFormater(dateToFormat: string) {
-  //   const date = new Date(dateToFormat);
-  //   const day = date.getDate();
-  //   const month = date.getMonth() + 1;
-  //   const year = date.getFullYear();
-  //   return `${day}/${month}/${year}`;
-  // }
-
   obtainAutorList(): Observable<Autor[]> {
     return this.clientHttp.get<any>(this.urlBase)
       .pipe(map
@@ -28,5 +20,9 @@ export class AutorService {
           created_at: autor.created_at
         })))
       );
+  }
+
+  addAutor(autor: Autor): Observable<Autor> {
+    return this.clientHttp.post<Autor>(this.urlBase, autor);
   }
 }

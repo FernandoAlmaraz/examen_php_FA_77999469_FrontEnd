@@ -1,5 +1,35 @@
-<app-autor-list></app-autor-list>
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark "
+    style="background-color: #98aadab7;">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="loans">Sistema de prestamos</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page"
+            routerLink="loans" routerLinkActive="active">Inicio</a>
+          <a class="nav-link" routerLink="add-autor"
+            routerLinkActive="active">Agregar Autores</a>
+          <a class="nav-link" href="/" routerLinkActive="active">Agregar
+            Clientes</a>
+          <a class="nav-link" routerLink="loans"
+            routerLinkActive="active">Realizar Prestamo</a>
+          <a class="nav-link disabled" aria-disabled="true">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="container">
+
+  <router-outlet></router-outlet>
+
+</div>
+<!-- <app-autor-list></app-autor-list>
 <app-book-list></app-book-list>
 <app-client-list></app-client-list>
-<app-loan-list></app-loan-list>
-<router-outlet></router-outlet>
+<app-loan-list></app-loan-list> -->

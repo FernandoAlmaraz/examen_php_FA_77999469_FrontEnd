@@ -8,19 +8,22 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ClientListComponent } from './clientComponents/client-list/client-list.component';
 import { BookListComponent } from './bookComponents/book-list/book-list.component';
 import { LoanListComponent } from './loanComponents/loan-list/loan-list.component';
+import { AutorAddComponent } from './autorComponents/autor-add/autor-add.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     AutorListComponent,
     ClientListComponent,
     BookListComponent,
-    LoanListComponent
+    LoanListComponent,
+    AutorAddComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
