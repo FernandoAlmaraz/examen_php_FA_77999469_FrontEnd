@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Autor } from 'src/app/models/autor';
 import { AutorService } from 'src/app/services/autor.service';
 
@@ -9,7 +10,7 @@ import { AutorService } from 'src/app/services/autor.service';
 })
 export class AutorListComponent {
   autors: Autor[] = [];
-  constructor(private service: AutorService) {
+  constructor(private service: AutorService, private router: Router) {
   }
   ngOnInit() {
     this.obtainAutors();
@@ -20,6 +21,15 @@ export class AutorListComponent {
         this.autors = data;
       })
     );
+  }
+  editAutor(id: number) {
+    this.router.navigate(['edit-autor', id])
+  }
+  deleteAutor(id: number) {
+    this.service.deleteAutor(id).subscribe({
+      next: (data) => this.obtainAutors(),
+      error: (error: any) => console.log(error)
+    });
   }
 }
 

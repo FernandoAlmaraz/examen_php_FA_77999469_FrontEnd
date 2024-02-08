@@ -29,4 +29,8 @@ export class BookService {
   addBook(book: Book): Observable<Book> {
     return this.clientHttp.post<Book>(this.urlBase, book);
   }
+
+  deleteBook(id: number): Observable<Object> {
+    return this.clientHttp.delete(`${this.urlBase}/${id}`);
+  }
 }

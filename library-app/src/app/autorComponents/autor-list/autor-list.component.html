@@ -9,6 +9,8 @@
         <th scope="col">Nombre</th>
         <th scope="col">Fecha de Creación</th>
         <th scope="col">Fecha de Actualización</th>
+        <th scope="col">Acciones</th>
+
       </tr>
     </thead>
     <tbody>
@@ -17,6 +19,15 @@
         <td>{{autor.name}}</td>
         <td>{{autor.created_at}}</td>
         <td>{{autor.updated_at}}</td>
+        <td class="text-center">
+          <div>
+            <button (click)="editAutor(autor.id)"
+              class="btn btn-warning btn-sm me-3">Editar</button>
+            <button (click)="deleteAutor(autor.id)"
+              class=" btn btn-danger btn-sm ">Eliminar</button>
+          </div>
+        </td>
+
       </tr>
     </tbody>
   </table>

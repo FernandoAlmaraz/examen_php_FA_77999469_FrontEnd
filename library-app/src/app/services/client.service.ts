@@ -26,5 +26,8 @@ export class ClientService {
   addClient(client: Client): Observable<Client> {
     return this.clientHttp.post<Client>(this.urlBase, client);
   }
+  deleteClient(id: number): Observable<Object> {
+    return this.clientHttp.delete(`${this.urlBase}/${id}`);
+  }
 }
 

@@ -21,4 +21,10 @@ export class BookListComponent {
       })
     );
   }
+  deleteBook(id: number) {
+    this.service.deleteBook(id).subscribe({
+      next: (data) => this.obtainBooks(),
+      error: (error: any) => console.log(error)
+    });
+  }
 }

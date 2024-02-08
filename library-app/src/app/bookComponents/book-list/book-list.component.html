@@ -8,23 +8,33 @@
       <tr>
         <th scope="col">Id</th>
         <th scope="col">Título</th>
+        <th scope="col">Autor</th>
         <th scope="col">Género</th>
         <th scope="col">Número de Lote</th>
         <th scope="col">Descripción</th>
         <th scope="col">Fecha de Creación</th>
         <th scope="col">Fecha de Actualización</th>
-
+        <th scope="col">Acciones</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let book of books">
         <th scope="row">{{book.id}}</th>
         <td>{{book.title}}</td>
+        <td>{{book.autor_id}}</td>
         <td>{{book.genre}}</td>
         <td>{{book.lot}}</td>
         <td>{{book.description}}</td>
         <td>{{book.created_at}}</td>
         <td>{{book.updated_at}}</td>
+        <td class="text-center">
+          <div>
+            <!-- <button (click)="editAutor(autor.id)"
+              class="btn btn-warning btn-sm me-3">Editar</button> -->
+            <button (click)="deleteBook(book.id)"
+              class=" btn btn-danger btn-sm ">Eliminar</button>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>

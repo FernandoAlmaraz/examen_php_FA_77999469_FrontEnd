@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { BookAddComponent } from './bookComponents/book-add/book-add.component';
 import { CliendAddComponent } from './clientComponents/cliend-add/cliend-add.component';
 import { LoanAddComponent } from './loanComponents/loan-add/loan-add.component';
+import { AutorEditComponent } from './autorComponents/autor-edit/autor-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { LoanAddComponent } from './loanComponents/loan-add/loan-add.component';
     AutorAddComponent,
     BookAddComponent,
     CliendAddComponent,
-    LoanAddComponent
+    LoanAddComponent,
+    AutorEditComponent
   ],
   imports: [
     BrowserModule,

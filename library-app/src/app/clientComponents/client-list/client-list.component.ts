@@ -21,4 +21,10 @@ export class ClientListComponent {
       })
     );
   }
+  deleteClient(id: number) {
+    this.service.deleteClient(id).subscribe({
+      next: (data) => this.obtainClients(),
+      error: (error: any) => console.log(error)
+    });
+  }
 }

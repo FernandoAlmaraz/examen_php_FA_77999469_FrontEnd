@@ -9,7 +9,6 @@ import { Autor } from '../models/autor';
 export class AutorService {
   private urlBase = "http://localhost:8000/api/v1/autors"
   constructor(private clientHttp: HttpClient) { }
-
   obtainAutorList(): Observable<Autor[]> {
     return this.clientHttp.get<any>(this.urlBase)
       .pipe(map
@@ -21,8 +20,23 @@ export class AutorService {
         })))
       );
   }
-
   addAutor(autor: Autor): Observable<Autor> {
     return this.clientHttp.post<Autor>(this.urlBase, autor);
   }
+
+  obtainAutorById(id: number): Observable<Autor> {
+    return this.clientHttp.get<any>(`${this.urlBase}/${id}`).pipe(map
+      (response => response.data.map((autor: Autor) => ({
+        id: autor.id,
+        name: autor.name,
+        updated_at: autor.updated_at,
+        created_at: autor.created_at
+      })))
+    );
+  }
+
+  deleteAutor(id: number): Observable<Object> {
+    return this.clientHttp.delete(`${this.urlBase}/${id}`);
+  }
 }
+
