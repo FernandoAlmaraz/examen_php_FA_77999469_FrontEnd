@@ -5,6 +5,6 @@ export class Book {
   lot: number = 0;
   description: string = "";
   genre: string = "";
-  created_at?: Date;
   updated_at?: Date;
+  created_at?: Date;
 }

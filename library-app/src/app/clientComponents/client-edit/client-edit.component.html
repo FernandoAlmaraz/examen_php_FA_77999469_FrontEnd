@@ -1,1 +1,52 @@
-<p>client-edit works!</p>
+<div class="container">
+  <div class="container text-center" style="margin: 30px;">
+    <h3>Agregar Nuevo Cliente</h3>
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Nombre del
+          Cliente</label>
+        <input type="text" class="form-control"
+          aria-describedby="namehelp" name="name" id="name" requited="true"
+          [(ngModel)]="client.name">
+        <div id="namehelp" class="form-text">El nombre completo del cliente
+          deberia ir en este campo</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email del
+          Cliente</label>
+        <input type="mail" class="form-control"
+          aria-describedby="emailhelp" name="email" id="email" requited="true"
+          [(ngModel)]="client.email">
+        <div id="emailhelp" class="form-text">Correo electronico del
+          cliente</div>
+      </div>
+      <div class="mb-3">
+        <label for="cellphone" class="form-label">Número del
+          Cliente</label>
+        <input type="number" class="form-control"
+          aria-describedby="cellphonehelp" name="cellphone" id="cellphone"
+          requited="true"
+          [(ngModel)]="client.cellphone">
+        <div id="cellphonehelp" class="form-text">Número de celular del
+          Cliente</div>
+      </div>
+      <div class="mb-3">
+        <label for="cellphone" class="form-label">Número CI del
+          Cliente</label>
+        <input type="cellphone" class="form-control"
+          aria-describedby="id_cardhelp" name="id_card" id="id_card"
+          requited="true"
+          [(ngModel)]="client.id_card">
+        <div id="id_cardhelp" class="form-text">Número Carnet de Identidad</div>
+      </div>
+      <div class="text-center">
+        <button type="submit"
+          class="btn btn-secondary btn-sm me-3">Agregar
+        </button>
+        <a href="/" class="btn btn-danger btn-sm">Regresar</a>
+      </div>
+    </form>
+  </div>
+
+</div>

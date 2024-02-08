@@ -12,6 +12,9 @@ import { AutorEditComponent } from './autorComponents/autor-edit/autor-edit.comp
 import { ReportLoansComponent } from './loanComponents/report-loans/report-loans.component';
 import { ReportMonthlyComponent } from './loanComponents/report-monthly/report-monthly.component';
 import { ReportWeeklyComponent } from './loanComponents/report-weekly/report-weekly.component';
+import { BookEditComponent } from './bookComponents/book-edit/book-edit.component';
+import { LoanEditComponent } from './loanComponents/loan-edit/loan-edit.component';
+import { ClientEditComponent } from './clientComponents/client-edit/client-edit.component';
 
 const routes: Routes = [
   { path: 'loans', component: LoanListComponent },
@@ -28,10 +31,9 @@ const routes: Routes = [
   { path: 'report-overdue', component: ReportLoansComponent },
   { path: 'report-monthly', component: ReportMonthlyComponent },
   { path: 'report-weekly', component: ReportWeeklyComponent },
-  // { path: 'edit-autor/:id', component: AutorEditComponent },
-  // { path: 'edit-loan', component: LoanAddComponent },
-  // { path: 'edit-loan', component: LoanAddComponent },
-  // { path: 'edit-loan', component: LoanAddComponent },
+  { path: 'edit-book/:id', component: BookEditComponent },
+  { path: 'edit-loan/:id', component: LoanEditComponent },
+  { path: 'edit-client/:id', component: ClientEditComponent },
 ];
 
 @NgModule({

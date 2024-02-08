@@ -22,7 +22,7 @@ export class AutorEditComponent {
         next: (data) => this.autor = data,
         error: (error: any) => console.log(error)
       });
-    console.log(this.autor)
+
   }
   onSubmit() {
     this.safeAutor();

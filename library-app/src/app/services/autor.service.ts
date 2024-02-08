@@ -11,6 +11,7 @@ export class AutorService {
   private urlBase = "http://localhost:8000/api/v1/autors"
   constructor(private clientHttp: HttpClient,
     private formater: DateFormaterService) { }
+
   obtainAutorList(): Observable<Autor[]> {
     return this.clientHttp.get<any>(this.urlBase)
       .pipe(map
@@ -27,6 +28,7 @@ export class AutorService {
   }
 
   obtainAutorById(id: number): Observable<Autor> {
+    console.log(`${this.urlBase}/${id}`)
     return this.clientHttp.get<any>(`${this.urlBase}/${id}`).pipe(
       map(response => ({
         id: response.data.id,

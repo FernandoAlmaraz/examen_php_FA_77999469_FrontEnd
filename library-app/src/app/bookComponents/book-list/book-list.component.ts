@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Book } from 'src/app/models/book';
 import { BookService } from 'src/app/services/book.service';
 
@@ -9,7 +10,7 @@ import { BookService } from 'src/app/services/book.service';
 })
 export class BookListComponent {
   books: Book[] = [];
-  constructor(private service: BookService) {
+  constructor(private service: BookService, private router: Router) {
   }
   ngOnInit() {
     this.obtainBooks();
@@ -20,6 +21,9 @@ export class BookListComponent {
         this.books = data;
       })
     );
+  }
+  editBook(id: number) {
+    this.router.navigate(['edit-book', id])
   }
   deleteBook(id: number) {
     this.service.deleteBook(id).subscribe({

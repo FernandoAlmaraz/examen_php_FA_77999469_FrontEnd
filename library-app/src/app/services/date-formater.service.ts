@@ -5,7 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class DateFormaterService {
 
-  constructor() { }
   formatDate(date: Date): string {
     const day = this.padZero(date.getDate());
     const month = this.padZero(date.getMonth() + 1);

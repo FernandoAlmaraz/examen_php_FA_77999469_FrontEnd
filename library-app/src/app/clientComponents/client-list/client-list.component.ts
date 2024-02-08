@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Client } from 'src/app/models/client';
 import { ClientService } from 'src/app/services/client.service';
 
@@ -9,7 +10,7 @@ import { ClientService } from 'src/app/services/client.service';
 })
 export class ClientListComponent {
   clients: Client[] = [];
-  constructor(private service: ClientService) {
+  constructor(private service: ClientService, private router: Router) {
   }
   ngOnInit() {
     this.obtainClients();
@@ -21,10 +22,14 @@ export class ClientListComponent {
       })
     );
   }
+  editClient(id: number) {
+    this.router.navigate(['edit-client', id])
+  }
   deleteClient(id: number) {
     this.service.deleteClient(id).subscribe({
       next: (data) => this.obtainClients(),
       error: (error: any) => console.log(error)
     });
   }
+
 }

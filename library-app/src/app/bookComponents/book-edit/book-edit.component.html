@@ -1,1 +1,64 @@
-<p>book-edit works!</p>
+<div class="container">
+  <div class="container text-center" style="margin: 30px;">
+    <h3>Editar Libro</h3>
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="title" class="form-label">
+          Título del Libro</label>
+        <input type="text" class="form-control"
+          aria-describedby="titlehelp" name="title" id="title" requited="true"
+          [(ngModel)]="book.title">
+        <div id="titlehelp" class="form-text">El nombre completo del Libro
+          deberia ir en este campo</div>
+
+        <label for="lot" class="form-label">Número de lote del libro
+        </label>
+        <input type="text" class="form-control"
+          aria-describedby="lothelp" name="lot" id="lot" requited="true"
+          [(ngModel)]="book.lot">
+        <div id="lothelp" class="form-text">El número completo
+          deberia ir en este campo</div>
+
+        <label for="description" class="form-label">Descripción del Libro
+        </label><br>
+        <textarea type="text" class="form-control" aria-label="With textarea"
+          name="description"
+          id="description"
+          requited="true"
+          [(ngModel)]="book.description"></textarea><br>
+        <div class="form-text">Descripcion corta del
+          libro</div>
+
+        <div class="mb-3">
+          <label for="genre" class="form-label">Género del Libro</label>
+          <select [(ngModel)]="book.genre" name="genre" id="genre"
+            class="form-select">
+            <option value="Acción">Acción</option>
+            <option value="Drama">Drama</option>
+            <option value="Comedia">Comedia</option>
+            <option value="Lirica">Lirica</option>
+            <option value="Teatral">Teatral</option>
+            <option value="Terror">Terror</option>
+            <option value="Misterio">Misterio</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="autor_id" class="form-label">Autor del Libro</label>
+          <select id="autor_id" name="autor_id" class="form-select"
+            [(ngModel)]="book.autor_id">
+            <option *ngFor="let autor of autors"
+              value="{{autor.id}}">{{autor.name}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button type="submit"
+          class="btn btn-warning btn-sm me-3">Guardar
+        </button>
+        <a href="/" class="btn btn-danger btn-sm">Regresar</a>
+      </div>
+    </form>
+  </div>
+
+</div>

@@ -32,6 +32,26 @@ export class BookService {
     return this.clientHttp.post<Book>(this.urlBase, book);
   }
 
+  obtainBookById(id: number): Observable<Book> {
+    console.log(`${this.urlBase}/${id}`);
+    return this.clientHttp.get<any>(`${this.urlBase}/${id}`).pipe(
+      map(response => ({
+        id: response?.data?.id || response?.id,
+        title: response?.data?.title || response?.title,
+        autor_id: response?.data?.autor_id || response?.autor_id,
+        lot: response?.data?.lot || response?.lot,
+        description: response?.data?.description || response?.description,
+        genre: response?.data?.genre || response?.genre,
+        updated_at: response?.data?.updated_at || null,
+        created_at: response?.data?.created_at || null
+      }))
+    );
+  }
+
+  editBook(id: number, book: Book): Observable<object> {
+    return this.clientHttp.put<any>(`${this.urlBase}/${id}`, book);
+  }
+
   deleteBook(id: number): Observable<Object> {
     return this.clientHttp.delete(`${this.urlBase}/${id}`);
   }
