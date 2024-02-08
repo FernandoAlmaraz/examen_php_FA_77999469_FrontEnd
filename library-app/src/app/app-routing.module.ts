@@ -20,6 +20,7 @@ const routes: Routes = [
   { path: 'add-autor', component: AutorAddComponent },
   { path: 'add-book', component: BookAddComponent },
   { path: 'add-client', component: CliendAddComponent },
+  { path: 'add-loan', component: LoanAddComponent },
   { path: 'edit-autor/:id', component: AutorEditComponent },
   // { path: 'edit-loan', component: LoanAddComponent },
   // { path: 'edit-loan', component: LoanAddComponent },
