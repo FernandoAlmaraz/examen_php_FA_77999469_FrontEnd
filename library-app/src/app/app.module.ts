@@ -15,6 +15,8 @@ import { CliendAddComponent } from './clientComponents/cliend-add/cliend-add.com
 import { LoanAddComponent } from './loanComponents/loan-add/loan-add.component';
 import { AutorEditComponent } from './autorComponents/autor-edit/autor-edit.component';
 import { ReportLoansComponent } from './loanComponents/report-loans/report-loans.component';
+import { ReportMonthlyComponent } from './loanComponents/report-monthly/report-monthly.component';
+import { ReportWeeklyComponent } from './loanComponents/report-weekly/report-weekly.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,9 @@ import { ReportLoansComponent } from './loanComponents/report-loans/report-loans
     CliendAddComponent,
     LoanAddComponent,
     AutorEditComponent,
-    ReportLoansComponent
+    ReportLoansComponent,
+    ReportMonthlyComponent,
+    ReportWeeklyComponent
   ],
   imports: [
     BrowserModule,

@@ -33,4 +33,10 @@ export class LoanService {
   overdueReport(): Observable<object[]> {
     return this.clientHttp.get<any>("http://localhost:8000/api/v1/overdueLoans")
   }
+  montlhyReport(): Observable<object[]> {
+    return this.clientHttp.get<any>("http://localhost:8000/api/v1/monthlyReport")
+  }
+  weeklyReport(): Observable<object[]> {
+    return this.clientHttp.get<any>("http://localhost:8000/api/v1/weeklyReport")
+  }
 }

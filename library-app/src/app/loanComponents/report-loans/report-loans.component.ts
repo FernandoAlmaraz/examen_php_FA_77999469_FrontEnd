@@ -20,6 +20,5 @@ export class ReportLoansComponent {
         this.objets = data;
       })
     );
-
   }
 }

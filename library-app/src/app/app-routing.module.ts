@@ -10,6 +10,8 @@ import { CliendAddComponent } from './clientComponents/cliend-add/cliend-add.com
 import { LoanAddComponent } from './loanComponents/loan-add/loan-add.component';
 import { AutorEditComponent } from './autorComponents/autor-edit/autor-edit.component';
 import { ReportLoansComponent } from './loanComponents/report-loans/report-loans.component';
+import { ReportMonthlyComponent } from './loanComponents/report-monthly/report-monthly.component';
+import { ReportWeeklyComponent } from './loanComponents/report-weekly/report-weekly.component';
 
 const routes: Routes = [
   { path: 'loans', component: LoanListComponent },
@@ -24,6 +26,8 @@ const routes: Routes = [
   { path: 'add-loan', component: LoanAddComponent },
   { path: 'edit-autor/:id', component: AutorEditComponent },
   { path: 'report-overdue', component: ReportLoansComponent },
+  { path: 'report-monthly', component: ReportMonthlyComponent },
+  { path: 'report-weekly', component: ReportWeeklyComponent },
   // { path: 'edit-autor/:id', component: AutorEditComponent },
   // { path: 'edit-loan', component: LoanAddComponent },
   // { path: 'edit-loan', component: LoanAddComponent },
