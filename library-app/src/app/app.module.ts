@@ -14,6 +14,7 @@ import { BookAddComponent } from './bookComponents/book-add/book-add.component';
 import { CliendAddComponent } from './clientComponents/cliend-add/cliend-add.component';
 import { LoanAddComponent } from './loanComponents/loan-add/loan-add.component';
 import { AutorEditComponent } from './autorComponents/autor-edit/autor-edit.component';
+import { ReportLoansComponent } from './loanComponents/report-loans/report-loans.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { AutorEditComponent } from './autorComponents/autor-edit/autor-edit.comp
     BookAddComponent,
     CliendAddComponent,
     LoanAddComponent,
-    AutorEditComponent
+    AutorEditComponent,
+    ReportLoansComponent
   ],
   imports: [
     BrowserModule,

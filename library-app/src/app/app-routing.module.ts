@@ -9,6 +9,7 @@ import { ClientListComponent } from './clientComponents/client-list/client-list.
 import { CliendAddComponent } from './clientComponents/cliend-add/cliend-add.component';
 import { LoanAddComponent } from './loanComponents/loan-add/loan-add.component';
 import { AutorEditComponent } from './autorComponents/autor-edit/autor-edit.component';
+import { ReportLoansComponent } from './loanComponents/report-loans/report-loans.component';
 
 const routes: Routes = [
   { path: 'loans', component: LoanListComponent },
@@ -22,6 +23,8 @@ const routes: Routes = [
   { path: 'add-client', component: CliendAddComponent },
   { path: 'add-loan', component: LoanAddComponent },
   { path: 'edit-autor/:id', component: AutorEditComponent },
+  { path: 'report-overdue', component: ReportLoansComponent },
+  // { path: 'edit-autor/:id', component: AutorEditComponent },
   // { path: 'edit-loan', component: LoanAddComponent },
   // { path: 'edit-loan', component: LoanAddComponent },
   // { path: 'edit-loan', component: LoanAddComponent },

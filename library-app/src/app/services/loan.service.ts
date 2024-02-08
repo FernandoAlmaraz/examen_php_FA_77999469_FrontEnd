@@ -30,5 +30,7 @@ export class LoanService {
   addLoan(loan: Loan): Observable<Loan> {
     return this.clientHttp.post<Loan>(this.urlBase, loan);
   }
-
+  overdueReport(): Observable<object[]> {
+    return this.clientHttp.get<any>("http://localhost:8000/api/v1/overdueLoans")
+  }
 }
