@@ -3,13 +3,15 @@ import { HttpClient } from '@angular/common/http'
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Book } from '../models/book';
+import { DateFormaterService } from './date-formater.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
   private urlBase = "http://localhost:8000/api/v1/books"
-  constructor(private clientHttp: HttpClient) { }
+  constructor(private clientHttp: HttpClient,
+    private formater: DateFormaterService) { }
 
   obtainBookList(): Observable<Book[]> {
     return this.clientHttp.get<any>(this.urlBase)
@@ -21,8 +23,8 @@ export class BookService {
           autor_id: book.autor_id,
           description: book.description,
           genre: book.genre,
-          updated_at: book.updated_at,
-          created_at: book.created_at
+          updated_at: book.updated_at ? this.formater.formatDate(new Date(book.updated_at)) : null,
+          created_at: book.created_at ? this.formater.formatDate(new Date(book.created_at)) : null
         })))
       );
   }
