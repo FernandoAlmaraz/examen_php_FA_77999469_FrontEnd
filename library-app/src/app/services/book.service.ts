@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http'
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { Book } from '../models/book';
 
 @Injectable({
@@ -25,5 +25,8 @@ export class BookService {
           created_at: book.created_at
         })))
       );
+  }
+  addBook(book: Book): Observable<Book> {
+    return this.clientHttp.post<Book>(this.urlBase, book);
   }
 }

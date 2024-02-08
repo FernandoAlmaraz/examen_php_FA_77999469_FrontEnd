@@ -10,6 +10,7 @@ import { BookListComponent } from './bookComponents/book-list/book-list.componen
 import { LoanListComponent } from './loanComponents/loan-list/loan-list.component';
 import { AutorAddComponent } from './autorComponents/autor-add/autor-add.component';
 import { FormsModule } from '@angular/forms';
+import { BookAddComponent } from './bookComponents/book-add/book-add.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     ClientListComponent,
     BookListComponent,
     LoanListComponent,
-    AutorAddComponent
+    AutorAddComponent,
+    BookAddComponent
   ],
   imports: [
     BrowserModule,
