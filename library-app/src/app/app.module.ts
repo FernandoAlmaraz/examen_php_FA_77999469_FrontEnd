@@ -17,6 +17,10 @@ import { AutorEditComponent } from './autorComponents/autor-edit/autor-edit.comp
 import { ReportLoansComponent } from './loanComponents/report-loans/report-loans.component';
 import { ReportMonthlyComponent } from './loanComponents/report-monthly/report-monthly.component';
 import { ReportWeeklyComponent } from './loanComponents/report-weekly/report-weekly.component';
+import { BookEditComponent } from './bookComponents/book-edit/book-edit.component';
+import { ClientEditComponent } from './clientComponents/client-edit/client-edit.component';
+import { EditEditComponent } from './loanComponents/edit-edit/edit-edit.component';
+import { LoanEditComponent } from './loanComponents/loan-edit/loan-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +35,11 @@ import { ReportWeeklyComponent } from './loanComponents/report-weekly/report-wee
     AutorEditComponent,
     ReportLoansComponent,
     ReportMonthlyComponent,
-    ReportWeeklyComponent
+    ReportWeeklyComponent,
+    BookEditComponent,
+    ClientEditComponent,
+    EditEditComponent,
+    LoanEditComponent
   ],
   imports: [
     BrowserModule,
