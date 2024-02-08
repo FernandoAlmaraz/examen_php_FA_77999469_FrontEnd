@@ -34,17 +34,14 @@ export class BookAddComponent {
   }
 
   addBook() {
-
     this.bookService.addBook(this.book).subscribe({
       next: data => {
-        console.log(data)
         this.redirectListBooks();
       },
       error: (error: any) => {
         console.log(error)
       }
     });
-
   }
 
   redirectListBooks() {

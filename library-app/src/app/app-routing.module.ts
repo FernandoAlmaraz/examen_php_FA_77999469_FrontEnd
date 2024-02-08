@@ -7,6 +7,7 @@ import { BookAddComponent } from './bookComponents/book-add/book-add.component';
 import { BookListComponent } from './bookComponents/book-list/book-list.component';
 import { ClientListComponent } from './clientComponents/client-list/client-list.component';
 import { CliendAddComponent } from './clientComponents/cliend-add/cliend-add.component';
+import { LoanAddComponent } from './loanComponents/loan-add/loan-add.component';
 
 const routes: Routes = [
   { path: 'loans', component: LoanListComponent },
@@ -14,9 +15,11 @@ const routes: Routes = [
   { path: 'autors', component: AutorListComponent },
   { path: 'books', component: BookListComponent },
   { path: 'clients', component: ClientListComponent },
+  { path: 'loans', component: LoanListComponent },
   { path: 'add-autor', component: AutorAddComponent },
   { path: 'add-book', component: BookAddComponent },
-  { path: 'add-client', component: CliendAddComponent }
+  { path: 'add-client', component: CliendAddComponent },
+  { path: 'add-loan', component: LoanAddComponent },
 ];
 
 @NgModule({

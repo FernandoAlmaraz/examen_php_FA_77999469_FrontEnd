@@ -25,4 +25,8 @@ export class LoanService {
         })))
       );
   }
+  addLoan(loan: Loan): Observable<Loan> {
+    return this.clientHttp.post<Loan>(this.urlBase, loan);
+  }
+
 }

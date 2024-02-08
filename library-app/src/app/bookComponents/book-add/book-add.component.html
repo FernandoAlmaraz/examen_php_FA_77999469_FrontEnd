@@ -42,16 +42,16 @@
             <option value="Misterio">Misterio</option>
           </select>
         </div>
+        <div class="mb-3">
+          <label for="autor_id" class="form-label">Autor del Libro</label>
+          <select id="autor_id" name="autor_id" class="form-select"
+            [(ngModel)]="book.autor_id">
+            <option *ngFor="let autor of autors"
+              value="{{autor.id}}">{{autor.name}}</option>
+          </select>
+        </div>
       </div>
 
-      <div class="mb-3">
-        <label for="autor_id" class="form-label">Autor del Libro</label>
-        <select id="autor_id" name="autor_id" class="form-select"
-          [(ngModel)]="book.autor_id">
-          <option *ngFor="let autor of autors"
-            value="{{autor.id}}">{{autor.name}}</option>
-        </select>
-      </div>
       <div class="text-center">
         <button type="submit"
           class="btn btn-warning btn-sm me-3">Agregar
