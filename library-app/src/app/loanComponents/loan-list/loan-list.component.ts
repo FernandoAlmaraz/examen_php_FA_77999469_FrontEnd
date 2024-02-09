@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Loan } from 'src/app/models/loan';
 import { LoanService } from 'src/app/services/loan.service';
 
@@ -9,7 +10,8 @@ import { LoanService } from 'src/app/services/loan.service';
 })
 export class LoanListComponent {
   loans: Loan[] = [];
-  constructor(private service: LoanService) {
+  constructor(private service: LoanService,
+    private router: Router) {
   }
   ngOnInit() {
     this.obtainLoans();
@@ -20,5 +22,8 @@ export class LoanListComponent {
         this.loans = data;
       })
     );
+  }
+  editLoan(id: number) {
+    this.router.navigate(['edit-loan', id])
   }
 }

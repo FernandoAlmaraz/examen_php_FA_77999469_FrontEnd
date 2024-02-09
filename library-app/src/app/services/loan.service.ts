@@ -27,6 +27,23 @@ export class LoanService {
         })))
       );
   }
+  obtainLoanById(id: number): Observable<any> {
+    return this.clientHttp.get<any>(`${this.urlBase}/${id}`).pipe(
+      map(response => ({
+        id: response.data.id,
+        book_id: response.data.book_id,
+        client_id: response.data.client_id,
+        loan_date: response.data.loan_date ? this.formater.formatDate(new Date(response.data.loan_date)) : null,
+        loan_days: response.data.loan_days,
+        status: response.data.status,
+        updated_at: response.data.updated_at ? this.formater.formatDate(new Date(response.data.updated_at)) : null,
+        created_at: response.data.created_at ? this.formater.formatDate(new Date(response.data.created_at)) : null
+      }))
+    );
+  }
+  editLoan(id: number, loan: Loan): Observable<object> {
+    return this.clientHttp.put<any>(`${this.urlBase}/${id}`, loan);
+  }
   addLoan(loan: Loan): Observable<Loan> {
     return this.clientHttp.post<Loan>(this.urlBase, loan);
   }

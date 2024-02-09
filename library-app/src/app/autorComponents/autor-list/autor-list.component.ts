@@ -10,7 +10,8 @@ import { AutorService } from 'src/app/services/autor.service';
 })
 export class AutorListComponent {
   autors: Autor[] = [];
-  constructor(private service: AutorService, private router: Router) {
+  constructor(private service: AutorService,
+    private router: Router) {
   }
   ngOnInit() {
     this.obtainAutors();

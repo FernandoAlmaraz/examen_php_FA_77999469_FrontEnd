@@ -13,12 +13,11 @@
         <th scope="col">Estado del préstamo</th>
         <th scope="col">Fecha de creación</th>
         <th scope="col">Fecha de Actualización</th>
-
+        <th scope="col">Editar</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let loan of loans">
-        <th scope="row">{{loan.id}}</th>
         <td>{{loan.book_id}}</td>
         <td>{{loan.client_id}}</td>
         <td>{{loan.loan_date}}</td>
@@ -26,6 +25,11 @@
         <td>{{loan.status}}</td>
         <td>{{loan.created_at}}</td>
         <td>{{loan.updated_at}}</td>
+        <td>
+          <button (click)="editLoan(loan.id)"
+            class="btn btn-warning btn-sm me-3">Editar
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>

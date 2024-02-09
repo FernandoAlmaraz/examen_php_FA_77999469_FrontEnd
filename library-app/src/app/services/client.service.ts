@@ -37,11 +37,11 @@ export class ClientService {
   obtainClientById(id: number): Observable<Client> {
     return this.clientHttp.get<any>(`${this.urlBase}/${id}`).pipe(
       map(response => ({
-        id: response.id || response?.id,
-        name: response.name || response?.name,
-        email: response.email || response?.email,
-        cellphone: response.cellphone || response?.cellphone,
-        id_card: response.id_card || response?.id_card,
+        id: response?.data?.id || response?.id,
+        name: response?.data?.name || response?.name,
+        email: response?.data?.email || response?.email,
+        cellphone: response?.data?.cellphone || response?.cellphone,
+        id_card: response?.data?.id_card || response?.id_card,
         updated_at: response?.data?.updated_at || null,
         created_at: response?.data?.created_at || null
       }))

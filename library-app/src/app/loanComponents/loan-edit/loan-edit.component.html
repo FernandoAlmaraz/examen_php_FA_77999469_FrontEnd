@@ -1,1 +1,47 @@
-<p>loan-edit works!</p>
+<div class="container">
+  <div class="container text-center" style="margin: 30px;">
+    <h3>Editar Prestamo</h3>
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="book_id" class="form-label">Selecione un Libro:</label>
+        <select id="book_id" name="book_id" class="form-select"
+          [(ngModel)]="loan.book_id">
+          <option *ngFor="let book of books"
+            value="{{book.id}}">{{book.title}}</option>
+        </select>
+
+        <label for="client_id" class="form-label">Selecione un Cliente:</label>
+        <select id="client_id" name="client_id" class="form-select"
+          [(ngModel)]="loan.client_id">
+          <option *ngFor="let client of clients"
+            value="{{client.id}}">{{client.name}}</option>
+        </select>
+
+        <label for="loan_days" class="form-label">Número de dias del prestamo
+        </label>
+        <input type="number" class="form-control"
+          aria-describedby="loan_dayshelp" name="loan_days" id="loan_days"
+          requited="true"
+          [(ngModel)]="loan.loan_days">
+        <div id="loan_dayshelp" class="form-text"></div>
+
+        <div class="mb-3">
+          <label for="status" class="form-label">Género del Libro</label>
+          <select [(ngModel)]="loan.status" name="status" id="status"
+            class="form-select">
+            <option value="En Prestamo">En Prestamo</option>
+            <option value="Devuelto">Devuelto</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button type="submit"
+          class="btn btn-secondary btn-sm me-3">Editar
+        </button>
+        <a href="/" class="btn btn-danger btn-sm">Regresar</a>
+      </div>
+    </form>
+  </div>
+
+</div>
